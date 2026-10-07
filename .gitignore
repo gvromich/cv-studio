@@ -5,3 +5,4 @@ jds/*
 !jds/.gitkeep
 .DS_Store
 *.log
+dist/

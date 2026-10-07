@@ -1,6 +1,5 @@
 # CV -- Elena Grigoryan
 
-**Location:** Los Angeles, CA
 **Email:** elenagrigoryan29@gmail.com
 **Phone:** +1 (224) 436-1098
 **LinkedIn:** linkedin.com/in/elenagrigoryan29

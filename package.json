@@ -2,11 +2,12 @@
   "name": "cv-studio",
   "version": "0.1.0",
   "private": true,
-  "description": "Tailored, fact-checked CV generator driven by a Claude Code command",
+  "description": "Tailored, fact-checked CV generator for Claude Code, claude.ai and Claude Desktop",
   "type": "module",
   "engines": { "node": ">=20" },
   "scripts": {
     "setup": "npm install && npx playwright install chromium",
+    "setup:sandbox": "bash scripts/sandbox-setup.sh",
     "gap": "node jd-skill-gap.mjs",
     "build": "node build-cv-html.mjs",
     "facts": "node verify-cv-facts.mjs",
