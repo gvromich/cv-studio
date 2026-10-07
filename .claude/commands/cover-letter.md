@@ -13,7 +13,7 @@ If the argument is a slug that already has `jds/{slug}.md`, use that file. Other
 
 ## 2. Draft the letter
 
-Use `cv.md` and `config/profile.yml` only. One page, native business English, short sentences, active voice, no corporate-speak, no filler.
+Use `cv.md` and `config/profile.yml` only. One page, native business English, short sentences, active voice, no corporate-speak, no filler. It should read like Elena wrote it herself: no stock openers ("I am excited to apply", "I am writing to express"), no "leverage", "passionate", "proven track record", "dynamic" or "synergy", no em dashes, and vary sentence length.
 
 - **Opening** (1–2 sentences): the role, the company, and the one reason Elena fits. Name the company's actual need from the JD, not a generic compliment.
 - **Profile intro** (2–3 sentences): the bridge from enterprise delivery to this role, in `cv.md`'s facts.
@@ -43,7 +43,7 @@ Write `output/{slug}.cover.json`:
 }
 ```
 
-`role_title`, `opening` and `profile_intro` are required. Use the hiring manager's name in `greeting` only if the posting gives one. Then:
+`role_title`, `opening` and `profile_intro` are required. Leave `candidate.location` empty (house rule: no home location), and don't mention where Elena lives in the letter. Use the hiring manager's name in `greeting` only if the posting gives one. Then:
 
 ```bash
 node generate-cover-letter.mjs --payload output/{slug}.cover.json --out output/{slug}-cover.pdf --format letter

@@ -11,8 +11,8 @@ Read `CLAUDE.md` first and follow its hard rules and house rules for the whole r
 
 - **Pasted text** (a block of job-description text): use it as is.
 - **A path in `jds/`**: read it.
-- **An Indeed link or job id, or a pick from a search result:** use the Indeed connector's job-details tool (load it with ToolSearch if it is deferred; search for "indeed"). Never scrape Indeed pages with WebFetch, Playwright or curl.
-- **Anything else** (another job-board link, a company careers link): try the page once with WebFetch, and if it does not return the full description, ask the user to paste it.
+- **An Indeed link or job id, or a pick from a search result:** use the Indeed connector's job-details tool (if it is deferred, load it with the tool-search tool: `ToolSearch` in Claude Code, `tool_search` in claude.ai; search for "indeed"). Never scrape Indeed pages with a web fetcher, Playwright or curl.
+- **Anything else** (another job-board link, a company careers link): try the page once with the web-fetch tool (`WebFetch` in Claude Code, `web_fetch` in claude.ai), and if it does not return the full description, ask the user to paste it.
 - If the connector or page returns only a snippet or a title with no responsibilities and requirements, say so and ask for the full text. Do not tailor against a stub.
 
 Save the description to `jds/{company-slug}-{role-slug}.md`. If the text arrives as one unbroken block, restore line breaks before each section heading (Responsibilities, Requirements, Qualifications) and each requirement, so the skill-gap check can find the requirements section. Change formatting only, never wording. Make the first line `Posted: {date or relative string as shown}` or `Posted: not visible in source`, then the title, company, location and full text. Use ASCII kebab-case slugs. If the company or role cannot be determined, ask.
@@ -46,7 +46,7 @@ Work from `cv.md` and `config/profile.yml` only. Use the framing guide in `CLAUD
 
 ## 4. Build the payload and the HTML
 
-Write the payload JSON to `output/{slug}.payload.json` using this schema. Candidate details come from `config/profile.yml`. Leave `photo` empty. Omit any section `cv.md` does not have; an empty or absent optional section drops entirely.
+Write the payload JSON to `output/{slug}.payload.json` using this schema. Candidate details come from `config/profile.yml`. Leave `photo` and `location` empty (house rule: no home location). Omit any section `cv.md` does not have; an empty or absent optional section drops entirely.
 
 ```json
 {

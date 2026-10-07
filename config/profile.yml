@@ -5,7 +5,7 @@ candidate:
   full_name: "Elena Grigoryan"
   email: "elenagrigoryan29@gmail.com"
   phone: "+1 (224) 436-1098"
-  location: "Los Angeles, CA"
+  location: ""         # intentionally empty: no home location on CVs or cover letters (avoids location bias)
   linkedin: "linkedin.com/in/elenagrigoryan29"
   portfolio_url: ""
   github: ""
@@ -17,6 +17,23 @@ language:
 
 cv:
   page_format: letter  # US. Pass --format=letter to generate-pdf.mjs
+
+job_search:
+  # Where Elena can work. Used only to flag on-site or hybrid roles outside
+  # these areas in search tables; never printed on a CV or cover letter.
+  # A search that names its own area ("roles in Chicago") adds to this list.
+  work_areas:
+    - "Greater Chicago area"
+  remote_ok: true
+  # Where searches look. Remove a line to stop using that source; a request in
+  # chat ("Indeed only", "skip Wellfound") overrides this for one search.
+  sources:
+    - indeed       # Indeed connector
+    - greenhouse   # job-boards.greenhouse.io, boards.greenhouse.io
+    - lever        # jobs.lever.co
+    - ashby        # jobs.ashbyhq.com
+    - workable     # apply.workable.com
+    - wellfound    # wellfound.com browse pages
 
 cover_letter:
   notice_period_days: 30
