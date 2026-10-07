@@ -1,0 +1,21 @@
+{
+  "name": "cv-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tailored, fact-checked CV generator driven by a Claude Code command",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "setup": "npm install && npx playwright install chromium",
+    "gap": "node jd-skill-gap.mjs",
+    "build": "node build-cv-html.mjs",
+    "facts": "node verify-cv-facts.mjs",
+    "pdf": "node generate-pdf.mjs",
+    "cover-letter": "node generate-cover-letter.mjs --payload",
+    "smoke": "node build-cv-html.mjs --test && node verify-cv-facts.mjs tests/baseline-servicenow.html && node generate-pdf.mjs tests/baseline-servicenow.html output/_smoke.pdf --format=letter"
+  },
+  "dependencies": {
+    "js-yaml": "^5.3.0",
+    "playwright": "1.63.0"
+  }
+}

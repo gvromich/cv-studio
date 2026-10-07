@@ -1,0 +1,23 @@
+# cv-studio profile. Contact details are printed on every CV; everything else
+# comes from cv.md. Edit this file, not the scripts.
+
+candidate:
+  full_name: "Elena Grigoryan"
+  email: "elenagrigoryan29@gmail.com"
+  phone: "+1 (224) 436-1098"
+  location: "Los Angeles, CA"
+  linkedin: "linkedin.com/in/elenagrigoryan29"
+  portfolio_url: ""
+  github: ""
+  photo: ""            # empty = no photo (US/ATS standard)
+  photo_style: rounded
+
+language:
+  output: en
+
+cv:
+  page_format: letter  # US. Pass --format=letter to generate-pdf.mjs
+
+cover_letter:
+  notice_period_days: 30
+  primary_domain: "business analysis and digital transformation"
